@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap');
+
+:root {
+    /* Premium Cyberpunk / High-Tech Dark Theme */
+    --bg-primary: #080b11;
+    --bg-secondary: #0f1420;
+    --bg-card: #151c2e;
+    
+    /* Typography */
+    --font-title: 'Outfit', 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Text Colors */
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    
+    /* Border Radius */
+    --border-radius: 16px;
+    
+    /* Accent Colors & Glows */
+    --accent-cyan: #00f0ff;
+    --accent-cyan-glow: rgba(0, 240, 255, 0.15);
+    
+    --accent-green: #39ff14;
+    --accent-green-glow: rgba(57, 255, 20, 0.15);
+    
+    --accent-orange: #ff9f1c;
+    --accent-orange-glow: rgba(255, 159, 28, 0.15);
+    
+    --accent-purple: #bd00ff;
+    --accent-purple-glow: rgba(189, 0, 255, 0.15);
+}
+
+/* Global Reset & Base Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+/* Layout Enhancement */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.db-header h1 {
+    font-family: var(--font-title);
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Cards & Containers with Glassmorphism / Subtle Borders */
+.config-card, .kpi-card, .chart-container, .table-container {
+    background: var(--bg-secondary) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5) !important;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
+}
+
+.kpi-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Config elements */
+.input-group label {
+    font-family: var(--font-title);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.input-group input {
+    background: var(--bg-card) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 8px !important;
+    padding: 12px 16px !important;
+    font-size: 0.95rem !important;
+    color: #fff !important;
+    transition: all 0.3s ease !important;
+}
+
+.input-group input:focus {
+    border-color: var(--accent-cyan) !important;
+    box-shadow: 0 0 15px var(--accent-cyan-glow) !important;
+    background: rgba(21, 28, 46, 0.8) !important;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 8px !important;
+    padding: 12px 24px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #00f0ff 0%, #00a8ff 100%) !important;
+    border: none !important;
+    color: #040814 !important;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.4) !important;
+    transform: translateY(-2px) !important;
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.btn-danger {
+    background: rgba(239, 68, 68, 0.08) !important;
+    border: 1px solid rgba(239, 68, 68, 0.2) !important;
+    color: #fca5a5 !important;
+}
+
+.btn-danger:hover {
+    background: rgba(239, 68, 68, 0.2) !important;
+    border-color: rgba(239, 68, 68, 0.4) !important;
+    color: #fff !important;
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.2) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Tables styling */
+table.data-table th {
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+table.data-table td {
+    padding: 12px !important;
+}
+
+table.data-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Badge Enhancements */
+.badge-normal, .badge-overheat {
+    display: inline-block;
+    padding: 4px 10px !important;
+    border-radius: 6px !important;
+    text-transform: uppercase;
+    font-size: 0.75rem !important;
+}
